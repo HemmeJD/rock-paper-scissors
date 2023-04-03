@@ -13,17 +13,6 @@ let getComputerChoice = () => {
     }
 }
 
-let game = () => {
-    while (playerScore < 5 && cpuScore < 5) {
-        let userChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
-        let computerChoice = getComputerChoice().toLowerCase();
-        alert(playRound(userChoice, computerChoice));
-        console.log(`Your score: ${playerScore}`);
-        console.log(`CPU score: ${cpuScore}`);
-    }
-    console.log(winGame());
-}
-
 let playRound = (userChoice, computerChoice) => {
     if (userChoice === 'rock' && computerChoice === 'paper') {
         cpuScore += 1;
@@ -54,6 +43,18 @@ let winGame = () => {
     } else if (cpuScore == 5) {
         return "You Lose!"
     }
+}
+
+
+let game = () => {
+    while (playerScore < 5 && cpuScore < 5) {
+        let userChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
+        let computerChoice = getComputerChoice().toLowerCase();
+        alert(playRound(userChoice, computerChoice));
+        console.log(`Your score: ${playerScore}`);
+        console.log(`CPU score: ${cpuScore}`);
+    }
+    console.log(winGame());
 }
 
 game();
